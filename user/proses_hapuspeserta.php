@@ -1,0 +1,16 @@
+<?php
+require_once("connect.php");
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['username'])) {
+    header('location:login.php');
+} else {
+    $username=$_SESSION['username'];
+}
+
+$id_peserta=$_GET['id_peserta'];
+mysqli_query($connection, "delete from peserta where id_peserta='$id_peserta'");
+header("location: index.php?page=profile");
+?>

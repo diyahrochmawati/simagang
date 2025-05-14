@@ -1,0 +1,134 @@
+
+Warning: session_start(): Cannot send session cookie - headers already sent in C:\xampp\htdocs\simagang\pimpinan\penilaian.php on line 5
+
+Call Stack:
+    0.0687     377288   1. {main}() C:\xampp\htdocs\simagang\pimpinan\penilaian.php:0
+    0.1788     385032   2. session_start() C:\xampp\htdocs\simagang\pimpinan\penilaian.php:5
+
+
+Warning: session_start(): Cannot send session cache limiter - headers already sent in C:\xampp\htdocs\simagang\pimpinan\penilaian.php on line 5
+
+Call Stack:
+    0.0687     377288   1. {main}() C:\xampp\htdocs\simagang\pimpinan\penilaian.php:0
+    0.1788     385032   2. session_start() C:\xampp\htdocs\simagang\pimpinan\penilaian.php:5
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-">
+    <title>SIMAGANG</title>
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simple-sidebar.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/Chart.bundle.min.js"></script>
+</head>
+<h5 class="text-dark p-3 border-bottom mt-2"><i class="fas fa-exclamation-triangle"></i>&nbspPenilaian</h5> 
+<div style="padding-bottom: 10px;">
+<form action="" method="post" > 
+<strong><i style="color: #616161; font-style: normal;">Cari</i> </strong><input class="iniinput" type="text" name="tekscari" size="24" />
+<select class="iniselect"  name="filter">
+<option value="nama_ketua">Nama</option>
+<option value="status">Status</option>
+<option value="id_daftar">ID Daftar</option>
+<option value="instansi">Instansi</option>
+
+</select>
+<input style="background-color: grey; " type="submit" name="cari" value="Cari" class="btn badge-info"/>
+<input style="background-color: grey; " type="submit" name="semua" value="Tampilkan Semua" class="btn badge-info"/>
+</form>
+</div>
+<table class="table table-striped table-bordered text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>No<th>Nama<th>Status<th>Instansi<th>Jurusan<th>Download Form Penilaian<th>Upload Nilai (.doc)<th>Detail
+        </tr>
+    </thead>
+    <tbody>
+                  </tbody>
+</table>
+
+</br>
+<h5 class="text-dark p-3 border-bottom mt-2"><i class="fas fa-folder fa-lg"></i>&nbspReport Penilaian</h5> 
+<div style="padding-bottom: 10px;">
+<form action="" method="post" > 
+<strong><i style="color: #616161; font-style: normal;">Cari</i> </strong><input class="iniinput" type="text" name="tekscari2" size="24" />
+<select class="iniselect"  name="filter2">
+<option value="nama_ketua">Nama</option>
+<option value="status">Status</option>
+<option value="id_daftar">ID Daftar</option>
+<option value="instansi">Instansi</option>
+</select>
+<input style="background-color: grey; " type="submit" name="cari2" value="Cari" class="btn badge-info"/>
+<input style="background-color: grey; " type="submit" name="semua2" value="Tampilkan Semua" class="btn badge-info"/>
+</form>
+</div>
+<table class="table table-striped table-bordered text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>No<th>ID Daftar<th>Status<th>Nama<th>Instansi<th>Jurusan<th>Tgl Magang<th>Form Penilaian<th>Detail
+        </tr>
+    </thead>
+    <tbody>
+                <tr>
+            <td>
+                1            </td>
+            <td>
+                30            </td>
+            <td>
+                Menunggu ACC NIlai            </td>
+            <td>
+                hayati            </td>
+            <td>
+                smk 3 turen ah            </td>
+            <td>
+                tkj            </td>
+            <td>
+                2019-06-13-</br>2019-06-20            </td>
+            <td><a class="btn badge-info" href="laporan.php?act=5_6309562267859943430.pdf">Lihat</a></td>
+            <td><a href="detail.php?user=hayati" id="btndetail"
+            class=" btn btn-info badge-info" data-toggle="modal" data-target="#detail">Detail</a></td>
+            
+          </tr>
+            </tbody>
+</table>
+<div style="padding-top: 40px;" class="modal fade" id="detail" role="dialog" tabindex="-1" aria-labelledby="riwayat" aria-hidden="true">
+    <div class="modal-dialog modal modal-dialog-centered" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h5 class="modal-title text-light">Detail Data </h5>
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="changedetail">
+                <div class="modal-body" id="bodydetail">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
+<script language="javascript">
+    $(document).ready(function () {
+        $('a#btndetail').click(function () {
+            var url = $(this).attr('href');
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    $('#changedetail').html(data);
+                }
+            });
+        });
+    });
+</script>

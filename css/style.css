@@ -1,0 +1,156 @@
+#zooming:hover {
+            transform: scale(1.1);
+            transition-property: transform;
+            transition-duration: .5s;
+        }
+.stats-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 70px;
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    box-shadow: 1px 0px 1px #fff, 0 0 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 1px 0px 1px #fff, 0 0 3px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 1px 0px 1px #fff, 0 0 3px rgba(0, 0, 0, 0.2) inset;
+}
+.text-muted {color: #000;}
+.btn {
+border: 1px solid !important;
+}
+
+.circle-wrap p {
+    color: #888888;
+    font-size: 13px;
+    margin: 0;
+}
+
+.circle-wrap p strong {
+    display: block;
+    font-size: 18px;
+    color: #777
+}
+
+.stats-circle i{
+    display: inline-block;
+    font-size: 2.8em;
+    margin-top: 25px;
+    margin-left:-5px;
+    text-shadow: 1px 1px 1px #999;
+    opacity: .6;
+}
+
+.stats-circle i {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+}
+
+.stats-circle:hover i {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    color: #fff;
+    opacity: 1;
+}
+
+.stats-circle span {
+    display: block;
+}
+.red-color {
+    background: #e17f90;
+}
+
+.green-color {
+    background: #a8c77b;
+}
+
+.gray-color {
+    background: #b9baba;
+}
+
+.purple-color {
+    background: #c8abdb;
+}
+
+.blue-color {
+    background: #93c4e4;
+}
+td{
+    width: 200px;
+}
+body,html{
+    background-color: rgb(242, 255, 254);
+    height: 100%;
+  }
+
+.side-bar{
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 10px;
+  }
+
+  .content-main{
+    height: 100%;
+  }
+
+  .nav-font{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+  }
+
+  .navbar-brand{
+    font-family: sans-serif;
+    font-size: 30px;
+  }
+
+  .putar{
+    transform: rotate(90deg);
+    transition-duration: 500ms;
+    /* animation-duration: 4000ms; */
+  }
+  .putarBack{
+    transform: rotate(-90deg);
+    transition-duration: 500ms;
+    /* animation-duration: 4000ms; */
+  }
+  .bg-2{
+    background-color: rgb(0, 148, 158);
+  }
+  .bg-3{
+    background-color: rgb(37, 136, 100);
+  }
+  .bg-4{
+    background-color: rgb( 75, 83, 126);
+  }
+   .iniinput {
+	font-family: FS Joey;
+    width: 300px;
+	height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+    font-family: arial;
+    }
+    .iniselect {
+	font-family: FS Joey;
+    width: 100px;
+	height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+    font-family: arial;}
+    
